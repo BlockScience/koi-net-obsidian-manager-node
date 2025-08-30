@@ -1,0 +1,6 @@
+.rid_cache
+.venv
+.env
+priv_key.pem
+config.yaml
+*.pyc
