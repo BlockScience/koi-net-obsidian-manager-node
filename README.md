@@ -1,0 +1,1 @@
+# koi-net-obsidian-manager-node
