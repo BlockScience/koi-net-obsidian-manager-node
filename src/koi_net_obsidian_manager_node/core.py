@@ -1,10 +1,9 @@
-from koi_net import NodeInterface
+from koi_net.core import FullNode
+
+from .handlers import obsidian_plugin_contact
 from .config import ObsidianManagerConfig
 
 
-node = NodeInterface(
-    config=ObsidianManagerConfig.load_from_yaml("config.yaml"),
-    use_kobj_processor_thread=True
-)
-
-from . import handlers
+class ObsidianManagerNode(FullNode):
+    config_schema = ObsidianManagerConfig
+    knowledge_handlers = FullNode.knowledge_handlers + [obsidian_plugin_contact]

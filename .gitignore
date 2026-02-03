@@ -4,3 +4,4 @@
 priv_key.pem
 config.yaml
 *.pyc
+*.ndjson

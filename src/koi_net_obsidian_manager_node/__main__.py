@@ -1,3 +1,3 @@
-from .core import node
+from .core import ObsidianManagerNode
 
-node.server.run()
+ObsidianManagerNode().run()

@@ -1,20 +1,20 @@
-from koi_net.protocol.node import NodeType, NodeProvides
-from koi_net.config import KoiNetConfig, NodeConfig, NodeProfile
-from pydantic import Field
+from koi_net.config.full_node import (
+    FullNodeConfig,
+    KoiNetConfig,
+    NodeProfile,
+    NodeProvides
+)
 
 from .rid_types import ObsidianNote
 
 
-class ObsidianManagerConfig(NodeConfig):
-    koi_net: KoiNetConfig = Field(default_factory=lambda: 
-        KoiNetConfig(
-            node_name="obsidian_manager",
-            node_profile=NodeProfile(
-                node_type=NodeType.FULL,
-                provides=NodeProvides(
-                    event=[ObsidianNote],
-                    state=[ObsidianNote]
-                )
+class ObsidianManagerConfig(FullNodeConfig):
+    koi_net: KoiNetConfig = KoiNetConfig(
+        node_name="obsidian_manager",
+        node_profile=NodeProfile(
+            provides=NodeProvides(
+                event=[ObsidianNote],
+                state=[ObsidianNote]
             )
         )
     )
