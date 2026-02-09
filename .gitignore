@@ -5,3 +5,5 @@ priv_key.pem
 config.yaml
 *.pyc
 *.ndjson
+build/
+*.egg-info
