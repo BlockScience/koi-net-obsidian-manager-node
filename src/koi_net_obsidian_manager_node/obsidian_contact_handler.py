@@ -2,6 +2,7 @@ from dataclasses import dataclass
 
 from koi_net.components import KobjQueue, NetworkGraph, NodeIdentity
 from koi_net.protocol import (
+    EventType,
     NodeProfile, 
     EdgeType, 
     generate_edge_bundle, 
@@ -21,6 +22,7 @@ class ObsidianContactHandler(KnowledgeHandler):
 
     handler_type=HandlerType.Network
     rid_types=(KoiNetNode,)
+    event_types=(EventType.NEW, EventType.UPDATE)
 
     def handle(self, kobj: KnowledgeObject):
         if kobj.rid == self.identity.rid:
